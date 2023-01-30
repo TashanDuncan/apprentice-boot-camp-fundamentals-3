@@ -9,7 +9,7 @@ class DefaultTaxCalculator extends TaxCalculator {
   }
 
   calculateTax(vehicle: Vehicle) {
-    return -1;
+    return 0;
   }
 }
 

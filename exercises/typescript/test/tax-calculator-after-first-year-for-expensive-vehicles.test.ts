@@ -2,7 +2,7 @@ import { DummyTaxCalculator } from './dummy-tax-calculator';
 import { Vehicle } from '../vehicle';
 import { FuelType } from '../fuel-type';
 
-describe('Tax calculator on expensive vehicles over 40K after the first year', () => {
+describe.skip('Tax calculator on expensive vehicles over 40K after the first year', () => {
   let taxCalculator = new DummyTaxCalculator();
   let FIRST_OF_APRIL_2017 = new Date(2017, 4, 1);
 
