@@ -2,7 +2,7 @@ import { DummyTaxCalculator } from './dummy-tax-calculator';
 import { Vehicle } from '../vehicle';
 import { FuelType } from '../fuel-type';
 
-describe.skip('Tax calculator on a diesel vehicle for the first year', () => {
+describe('Tax calculator on a diesel vehicle for the first year', () => {
   let taxCalculator = new DummyTaxCalculator();
   let FIRST_OF_JAN_2020 = new Date(2020, 1, 1);
 
