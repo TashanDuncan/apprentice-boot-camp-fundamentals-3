@@ -3,7 +3,7 @@ import { DefaultTaxCalculator } from './default-tax-calculator';
 import { Vehicle } from '../vehicle';
 import { FuelType } from '../fuel-type';
 
-describe.skip('Tax calculator on a petrol vehicle for the first year', () => {
+describe('Tax calculator on a petrol vehicle for the first year', () => {
   let taxCalculator = new DefaultTaxCalculator();
   let FIRST_OF_JAN_2020 = new Date(2020, 1, 1);
 
