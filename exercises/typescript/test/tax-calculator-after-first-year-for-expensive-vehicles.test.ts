@@ -1,9 +1,9 @@
-import { DummyTaxCalculator } from './dummy-tax-calculator';
+import { DefaultTaxCalculator } from './default-tax-calculator';
 import { Vehicle } from '../vehicle';
 import { FuelType } from '../fuel-type';
 
-describe.skip('Tax calculator on expensive vehicles over 40K after the first year', () => {
-  let taxCalculator = new DummyTaxCalculator();
+describe('Tax calculator on expensive vehicles over 40K after the first year', () => {
+  let taxCalculator = new DefaultTaxCalculator(false, true);
   let FIRST_OF_APRIL_2017 = new Date(2017, 4, 1);
 
   it('subsequent years tax for petrol vehicles over 40K', () => {
@@ -11,12 +11,12 @@ describe.skip('Tax calculator on expensive vehicles over 40K after the first yea
     expect(taxCalculator.calculateTax(vehicle)).toBe(450);
   })
 
-  it('subsequent years tax for electric vehicles over 40K', () => {
+  it.skip('subsequent years tax for electric vehicles over 40K', () => {
     const vehicle = new Vehicle(206, FuelType.ELECTRIC, FIRST_OF_APRIL_2017, 50000);
     expect(taxCalculator.calculateTax(vehicle)).toBe(310);
   })
 
-  it('subsequent years tax for alternative fuel vehicles over 40K', () => {
+  it.skip('subsequent years tax for alternative fuel vehicles over 40K', () => {
     const vehicle = new Vehicle(206, FuelType.ALTERNATIVE_FUEL, FIRST_OF_APRIL_2017, 50000);
     expect(taxCalculator.calculateTax(vehicle)).toBe(440);
   })
