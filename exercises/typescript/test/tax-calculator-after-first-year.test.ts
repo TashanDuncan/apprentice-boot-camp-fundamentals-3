@@ -3,7 +3,7 @@ import { Vehicle } from '../vehicle';
 import { FuelType } from '../fuel-type';
 import { DefaultTaxCalculator } from './default-tax-calculator';
 describe('Tax calculator on vehicles after the first year', () => {
-  let taxCalculator = new DefaultTaxCalculator(true);
+  let taxCalculator = new DefaultTaxCalculator(true, false);
   let FIRST_OF_APRIL_2017 = new Date(2017, 4, 1);
 
   it('subsequent years tax for petrol', () => {
