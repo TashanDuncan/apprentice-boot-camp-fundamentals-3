@@ -21,6 +21,9 @@ class DefaultTaxCalculator extends TaxCalculator {
         if (vehicle.fuelType === FuelType.ELECTRIC) {
           return 310
         }
+        if (vehicle.fuelType === FuelType.ALTERNATIVE_FUEL) {
+          return 440
+        }
       }
     if (vehicle.dateOfFirstRegistration.getFullYear() < this.getYear()) {
       if(this.story4Toggle) {

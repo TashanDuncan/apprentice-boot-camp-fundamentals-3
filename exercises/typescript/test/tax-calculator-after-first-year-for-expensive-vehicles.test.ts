@@ -16,7 +16,7 @@ describe('Tax calculator on expensive vehicles over 40K after the first year', (
     expect(taxCalculator.calculateTax(vehicle)).toBe(310);
   })
 
-  it.skip('subsequent years tax for alternative fuel vehicles over 40K', () => {
+  it('subsequent years tax for alternative fuel vehicles over 40K', () => {
     const vehicle = new Vehicle(206, FuelType.ALTERNATIVE_FUEL, FIRST_OF_APRIL_2017, 50000);
     expect(taxCalculator.calculateTax(vehicle)).toBe(440);
   })
