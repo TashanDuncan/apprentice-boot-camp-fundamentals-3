@@ -12,6 +12,11 @@ class DefaultTaxCalculator extends TaxCalculator {
   }
 
   calculateTax(vehicle: Vehicle) {
+    if (this.story5Toggle) {
+      if (vehicle.dateOfFirstRegistration.getFullYear < super.getYear) {
+        
+      }
+    }
     if (vehicle.fuelType === "Petrol") {
       if (vehicle.co2Emissions === 0) {
         return 0;
