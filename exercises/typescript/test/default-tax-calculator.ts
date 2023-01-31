@@ -3,17 +3,15 @@ import { FuelType } from "../fuel-type";
 import { Vehicle } from "../vehicle";
 
 class DefaultTaxCalculator extends TaxCalculator {
-  story5Toggle: boolean
-  constructor( story5Toggle: boolean = true) {
+  constructor() {
     super(2019);
-    this.story5Toggle = story5Toggle
   }
 
 
   calculateTax(vehicle: Vehicle) {
     if (vehicle.dateOfFirstRegistration.getFullYear() < this.getYear()) {
      
-      if (this.story5Toggle && vehicle.listPrice > 40_000) {
+      if (vehicle.listPrice > 40_000) {
         if (vehicle.fuelType === FuelType.PETROL || vehicle.fuelType === FuelType.DIESEL) {
           return 450
         }

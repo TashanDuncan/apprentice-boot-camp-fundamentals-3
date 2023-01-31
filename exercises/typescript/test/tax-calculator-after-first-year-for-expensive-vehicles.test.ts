@@ -3,7 +3,7 @@ import { Vehicle } from '../vehicle';
 import { FuelType } from '../fuel-type';
 
 describe('Tax calculator on expensive vehicles over 40K after the first year', () => {
-  let taxCalculator = new DefaultTaxCalculator(true);
+  let taxCalculator = new DefaultTaxCalculator();
   let FIRST_OF_APRIL_2017 = new Date(2017, 4, 1);
 
   it('subsequent years tax for petrol vehicles over 40K', () => {
