@@ -13,7 +13,14 @@ class DefaultTaxCalculator extends TaxCalculator {
 
 
   calculateTax(vehicle: Vehicle) {
-    if (vehicle.dateOfFirstRegistration.getFullYear() < this.year) {
+    if (vehicle.dateOfFirstRegistration.getFullYear() < this.getYear()) {
+      if(this.story4Toggle) {
+        if(vehicle.fuelType === FuelType.PETROL || vehicle.fuelType === FuelType.DIESEL){
+          return 140
+        } else if(vehicle.fuelType === FuelType.ALTERNATIVE_FUEL) {
+          return 130
+        }
+      }
       if (this.story5Toggle && vehicle.listPrice > 40_000) {
         if (vehicle.fuelType === FuelType.PETROL || vehicle.fuelType === FuelType.DIESEL) {
           return 450
@@ -24,17 +31,6 @@ class DefaultTaxCalculator extends TaxCalculator {
         if (vehicle.fuelType === FuelType.ALTERNATIVE_FUEL) {
           return 440
         }
-      }
-    if (vehicle.dateOfFirstRegistration.getFullYear() < this.getYear()) {
-      if(this.story4Toggle) {
-        if(vehicle.fuelType === FuelType.PETROL || vehicle.fuelType === FuelType.DIESEL){
-          return 140
-        } else if(vehicle.fuelType === FuelType.ALTERNATIVE_FUEL) {
-          return 130
-        }
-      }
-      if (this.story5Toggle) {
-
       }
     }
     if (vehicle.fuelType === "Petrol") {
@@ -155,6 +151,5 @@ class DefaultTaxCalculator extends TaxCalculator {
       return 0
     }
   }
-}
 }
 export { DefaultTaxCalculator };
