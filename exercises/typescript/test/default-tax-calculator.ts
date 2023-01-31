@@ -4,7 +4,7 @@ import { Vehicle } from "../vehicle";
 
 class DefaultTaxCalculator extends TaxCalculator {
   story5Toggle: boolean
-  constructor( story5Toggle: boolean = false) {
+  constructor( story5Toggle: boolean = true) {
     super(2019);
     this.story5Toggle = story5Toggle
   }
