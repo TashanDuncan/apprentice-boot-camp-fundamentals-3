@@ -3,8 +3,12 @@ import { FuelType } from "../fuel-type";
 import { Vehicle } from "../vehicle";
 
 class DefaultTaxCalculator extends TaxCalculator {
-  constructor() {
+  story4Toggle: boolean
+  story5Toggle: boolean
+  constructor(story4Toggle: boolean = false, story5Toggle: boolean = false) {
     super(2023);
+    this.story4Toggle = story4Toggle
+    this.story5Toggle = story5Toggle
   }
 
   calculateTax(vehicle: Vehicle) {
