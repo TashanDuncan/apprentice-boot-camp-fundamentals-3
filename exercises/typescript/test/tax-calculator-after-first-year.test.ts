@@ -1,9 +1,9 @@
 import { DummyTaxCalculator } from './dummy-tax-calculator';
 import { Vehicle } from '../vehicle';
 import { FuelType } from '../fuel-type';
-
-describe.skip('Tax calculator on vehicles after the first year', () => {
-  let taxCalculator = new DummyTaxCalculator();
+import { DefaultTaxCalculator } from './default-tax-calculator';
+describe('Tax calculator on vehicles after the first year', () => {
+  let taxCalculator = new DefaultTaxCalculator();
   let FIRST_OF_APRIL_2017 = new Date(2017, 4, 1);
 
   it('subsequent years tax for petrol', () => {
