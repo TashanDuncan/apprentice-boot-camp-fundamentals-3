@@ -3,24 +3,16 @@ import { FuelType } from "../fuel-type";
 import { Vehicle } from "../vehicle";
 
 class DefaultTaxCalculator extends TaxCalculator {
-  story4Toggle: boolean
   story5Toggle: boolean
-  constructor(story4Toggle: boolean = true, story5Toggle: boolean = false) {
+  constructor( story5Toggle: boolean = false) {
     super(2019);
-    this.story4Toggle = story4Toggle
     this.story5Toggle = story5Toggle
   }
 
 
   calculateTax(vehicle: Vehicle) {
     if (vehicle.dateOfFirstRegistration.getFullYear() < this.getYear()) {
-      if(this.story4Toggle) {
-        if(vehicle.fuelType === FuelType.PETROL || vehicle.fuelType === FuelType.DIESEL){
-          return 140
-        } else if(vehicle.fuelType === FuelType.ALTERNATIVE_FUEL) {
-          return 130
-        }
-      }
+     
       if (this.story5Toggle && vehicle.listPrice > 40_000) {
         if (vehicle.fuelType === FuelType.PETROL || vehicle.fuelType === FuelType.DIESEL) {
           return 450
@@ -32,6 +24,15 @@ class DefaultTaxCalculator extends TaxCalculator {
           return 440
         }
       }
+      else {
+        if(vehicle.fuelType === FuelType.PETROL || vehicle.fuelType === FuelType.DIESEL){
+          return 140
+        } else if(vehicle.fuelType === FuelType.ALTERNATIVE_FUEL) {
+          return 130
+        }
+      }
+      
+
     }
     if (vehicle.fuelType === FuelType.PETROL) {
       if (vehicle.co2Emissions === 0) {
