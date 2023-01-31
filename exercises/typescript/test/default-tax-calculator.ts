@@ -33,7 +33,7 @@ class DefaultTaxCalculator extends TaxCalculator {
         }
       }
     }
-    if (vehicle.fuelType === "Petrol") {
+    if (vehicle.fuelType === FuelType.PETROL) {
       if (vehicle.co2Emissions === 0) {
         return 0;
       }
@@ -133,7 +133,7 @@ class DefaultTaxCalculator extends TaxCalculator {
       if (vehicle.co2Emissions > 255) {
         return 2060;
       }
-    } else if (vehicle.fuelType === "Diesel") {
+    } else if (vehicle.fuelType === FuelType.DIESEL) {
       if (vehicle.co2Emissions === 0) return 0;
       if (vehicle.co2Emissions < 51) return 25;
       if (vehicle.co2Emissions < 76) return 105;
