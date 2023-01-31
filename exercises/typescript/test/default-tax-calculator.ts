@@ -18,6 +18,9 @@ class DefaultTaxCalculator extends TaxCalculator {
         if (vehicle.fuelType === FuelType.PETROL || vehicle.fuelType === FuelType.DIESEL) {
           return 450
         }
+        if (vehicle.fuelType === FuelType.ELECTRIC) {
+          return 310
+        }
       }
     if (vehicle.dateOfFirstRegistration.getFullYear() < this.getYear()) {
       if(this.story4Toggle) {
